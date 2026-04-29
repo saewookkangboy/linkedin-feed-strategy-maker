@@ -1,12 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --app-bg: #fafafa;
+  --surface: #ffffff;
+  --foreground: #18181b;
+  --brand: #0a66c2;
+  --brand-muted: #e8f3fc;
+  --hairline: color-mix(in srgb, var(--foreground) 6%, transparent);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-background: var(--app-bg);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -14,13 +22,55 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --app-bg: #09090b;
+    --surface: #0f0f12;
+    --foreground: #fafafa;
+    --brand-muted: #1a2430;
+    --hairline: color-mix(in srgb, var(--foreground) 8%, transparent);
   }
 }
 
 body {
-  background: var(--background);
+  background: var(--app-bg);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: rgba(10, 102, 194, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    background-color: rgba(55, 143, 233, 0.35);
+  }
+}
+
+/* M1–M5 하네스 시그널 파이프라인 */
+@keyframes harness-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.harness-spinner {
+  animation: harness-spin 0.85s linear infinite;
+}
+
+@keyframes harness-shimmer {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.harness-connector-shimmer {
+  animation: harness-shimmer 1.15s ease-in-out infinite;
 }
