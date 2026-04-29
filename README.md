@@ -1,7 +1,5 @@
 # LinkedIn 피드 전략 작업실
 
-소스 저장소: [github.com/saewookkangboy/linkedin-feed-strategy-maker](https://github.com/saewookkangboy/linkedin-feed-strategy-maker)
-
 링크드인에서 **직접 본 글**을 붙여 넣어 모으고, 키워드·트렌드·주간 브리프·캘린더까지 한 흐름으로 정리하는 **브라우저 로컬 작업실**입니다. 자동 수집·팔로워 피드 API 연동은 없으며, OSS(오픈소스) 참고 링크와 선택적 OpenAI 호출만 서버에서 처리합니다.
 
 ## 스택
@@ -52,15 +50,6 @@
 | `/api/agent/orchestration-harness` | 하네스용 단계별 출력 |
 
 OpenAI를 쓰는 경로는 키가 없거나 API 오류 시 **결정적(deterministic) 폴백**과 `warning` 필드를 쓰는 패턴이 있습니다. 자세한 요청/응답 형식은 각 `src/app/api/**/route.ts`를 참고하세요.
-
-## 환경 변수
-
-`.env.example`과 같습니다.
-
-| 변수 | 설명 |
-|------|------|
-| `OPENAI_API_KEY` | 선택. 없으면 브리프·에이전트 관련 API는 규칙 기반/폴백 위주로 동작 |
-| `OPENAI_MODEL` | 선택. 기본값 `gpt-4o-mini` |
 
 ## 로컬 실행
 

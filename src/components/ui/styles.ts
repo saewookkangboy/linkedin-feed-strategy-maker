@@ -1,12 +1,12 @@
 /** 공통 Tailwind 조각 — 페이지에서 import 해 재사용 */
 
 export const inputClassName =
-  "w-full rounded-lg border border-zinc-200/80 bg-[var(--surface)] px-3 py-2.5 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-zinc-300 focus:ring-1 focus:ring-[#0a66c2]/25 dark:border-zinc-700/80 dark:bg-[var(--surface)] dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-zinc-600 dark:focus:ring-[#70b5f9]/20";
+  "w-full rounded-lg border border-zinc-200/80 bg-[var(--surface)] px-3 py-2.5 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-[#0a66c2]/35 focus:ring-1 focus:ring-[#0a66c2]/15 dark:border-zinc-700/80 dark:bg-[var(--surface)] dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-[#70b5f9]/40 dark:focus:ring-[#70b5f9]/12";
 
 export const selectClassName = inputClassName;
 
 export const textareaClassName =
-  "w-full rounded-lg border border-zinc-200/80 bg-[var(--surface)] p-3 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-zinc-300 focus:ring-1 focus:ring-[#0a66c2]/25 dark:border-zinc-700/80 dark:bg-[var(--surface)] dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-zinc-600 dark:focus:ring-[#70b5f9]/20";
+  "w-full rounded-lg border border-zinc-200/80 bg-[var(--surface)] p-3 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-[#0a66c2]/35 focus:ring-1 focus:ring-[#0a66c2]/15 dark:border-zinc-700/80 dark:bg-[var(--surface)] dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-[#70b5f9]/40 dark:focus:ring-[#70b5f9]/12";
 
 export const labelClassName =
   "text-[11px] font-medium tracking-wide text-zinc-500 dark:text-zinc-400";

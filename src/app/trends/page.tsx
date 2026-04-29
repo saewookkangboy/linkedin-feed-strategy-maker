@@ -298,7 +298,7 @@ function WindowCard({ title, stats }: { title: string; stats: TrendWindowStats }
         </div>
       </dl>
       <div className="mt-4">
-        <p className="text-xs font-bold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+        <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-zinc-400 dark:text-zinc-500">
           토픽
         </p>
         <ul className="mt-2 space-y-1 text-sm text-zinc-800 dark:text-zinc-200">
@@ -311,7 +311,7 @@ function WindowCard({ title, stats }: { title: string; stats: TrendWindowStats }
         </ul>
       </div>
       <div className="mt-4">
-        <p className="text-xs font-bold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+        <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-zinc-400 dark:text-zinc-500">
           포맷
         </p>
         <ul className="mt-2 space-y-1 text-sm text-zinc-800 dark:text-zinc-200">
