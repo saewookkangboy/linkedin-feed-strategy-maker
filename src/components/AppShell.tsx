@@ -1,5 +1,6 @@
 "use client";
 
+import { LinkedInInBug } from "@/components/LinkedInInBug";
 import { NAV_GROUPS } from "@/components/nav-config";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -72,7 +73,16 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-screen bg-[var(--app-bg)] text-zinc-900 dark:text-zinc-50">
       <aside className="relative z-30 hidden w-[15.5rem] shrink-0 flex-col border-r border-[var(--hairline)] bg-[var(--app-bg)] lg:flex">
         <div className="px-5 pb-4 pt-6">
-          <Link href="/" className="block transition-opacity hover:opacity-80">
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[28px] min-w-[28px] items-center rounded-md outline-offset-2 transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#0a66c2] dark:focus-visible:outline-[#70b5f9]"
+            aria-label="LinkedIn (새 탭)"
+          >
+            <LinkedInInBug className="h-7 w-7 sm:h-8 sm:w-8" />
+          </a>
+          <Link href="/" className="mt-5 block transition-opacity hover:opacity-80">
             <span className="text-[15px] font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
               FeedStrategy
             </span>
@@ -103,10 +113,26 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between px-4 py-4">
-          <Link href="/" className="text-sm font-semibold text-zinc-900 dark:text-zinc-50" onClick={closeMenu}>
-            FeedStrategy
-          </Link>
+        <div className="flex items-center justify-between gap-3 px-4 py-4">
+          <div className="flex min-w-0 items-center gap-3">
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex shrink-0 rounded-md p-0.5 outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#0a66c2] dark:focus-visible:outline-[#70b5f9]"
+              aria-label="LinkedIn (새 탭)"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <LinkedInInBug className="h-7 w-7" />
+            </a>
+            <Link
+              href="/"
+              className="min-w-0 truncate text-sm font-semibold text-zinc-900 dark:text-zinc-50"
+              onClick={closeMenu}
+            >
+              FeedStrategy
+            </Link>
+          </div>
           <button
             type="button"
             className="rounded-md p-2 text-zinc-400 transition hover:bg-zinc-950/5 hover:text-zinc-700 dark:hover:bg-white/5 dark:hover:text-zinc-200"
@@ -123,9 +149,20 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="sticky top-0 z-20 flex items-center justify-between gap-3 border-b border-[var(--hairline)] bg-[var(--app-bg)]/90 px-4 py-3 backdrop-blur-md dark:border-zinc-800/80 lg:hidden">
-          <Link href="/" className="min-w-0 truncate text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-            FeedStrategy
-          </Link>
+          <div className="flex min-w-0 flex-1 items-center gap-2.5">
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex shrink-0 rounded-md p-0.5 outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#0a66c2] dark:focus-visible:outline-[#70b5f9]"
+              aria-label="LinkedIn (새 탭)"
+            >
+              <LinkedInInBug className="h-6 w-6" />
+            </a>
+            <Link href="/" className="min-w-0 truncate text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+              FeedStrategy
+            </Link>
+          </div>
           <button
             type="button"
             className="shrink-0 rounded-lg border border-[var(--hairline)] bg-[var(--surface)] px-3 py-1.5 text-xs font-medium text-zinc-800 transition hover:bg-zinc-50 dark:border-zinc-700/80 dark:bg-[var(--surface)] dark:text-zinc-200 dark:hover:bg-zinc-800/40"
@@ -142,6 +179,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
         <footer className="border-t border-[var(--hairline)] px-4 py-5 text-center text-[11px] leading-relaxed text-zinc-400 dark:border-zinc-800/80 dark:text-zinc-500">
           데이터는 이 브라우저(로컬)에만 저장됩니다. 링크드인 이용약관·저작권·개인정보를 준수해 주세요.
+          <span className="mt-2 block text-[10px] text-zinc-400/90 dark:text-zinc-500/90">
+            LinkedIn 및 [in] 로고는 LinkedIn Corporation 및 그 계열사의 상표입니다. 본 앱은 LinkedIn과 제휴·승인 관계가 아닙니다.
+          </span>
         </footer>
       </div>
     </div>
